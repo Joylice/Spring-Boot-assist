@@ -1,2 +1,2 @@
 # Spring-Boot-assist
-druid  SSL and so on
+druid  SSL  spring-boot-data-jpa and so on
