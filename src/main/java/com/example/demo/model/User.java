@@ -1,14 +1,19 @@
 package com.example.demo.model;
 
+
+import com.sun.xml.internal.ws.developer.Serialization;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Created by cuiyy on 2017/10/23.
  */
 @Entity
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = -1L;
     @Id
     @GeneratedValue
     private Long id;
@@ -62,4 +67,5 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
+
 }
