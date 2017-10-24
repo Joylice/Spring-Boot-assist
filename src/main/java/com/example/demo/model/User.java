@@ -1,8 +1,6 @@
 package com.example.demo.model;
 
 
-import com.sun.xml.internal.ws.developer.Serialization;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

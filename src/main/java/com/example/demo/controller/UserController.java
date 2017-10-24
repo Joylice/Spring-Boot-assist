@@ -14,7 +14,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.UUID;
 
 
 /**
@@ -72,5 +74,15 @@ public class UserController {
         Page<User> user = userRepository.findAll(new PageRequest(1, 2));
 
         return user;
+    }
+
+    @RequestMapping("/uid")
+    String uid(HttpSession session) {
+        UUID uid = (UUID) session.getAttribute("uid");
+        if (uid == null) {
+            uid = UUID.randomUUID();
+        }
+        session.setAttribute("uid", uid);
+        return session.getId();
     }
 }
